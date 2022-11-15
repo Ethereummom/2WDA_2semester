@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>새로운 페이지</div>
+        {{counter}}<br>
+        <button @click="incrementCounter">counter변수 값 증가</button>
+        <button @click="decrementCounter">counter변수 값 감소</button>
+        <my-component @increment-me = "incrementCounter" ></my-component>
+        <my-component @increment-me = "incrementCounter" ></my-component> <!--이벤트 중첩으로 받을 수 있는지?-->
+        <!--<my-component @decrement-me = "decrementCounter" ></my-component>-->
+
+
+    </div>
+    <script>
+        const counter = {counter : 0};
+
+        const MyComponent = {
+            template : '<div><button @click = "IncrementCounterFromComponent">컴포넌트에서  counter 변수값 증가</button></div>',
+            methods : {
+                IncrementCounterFromComponent() {
+                    this.$emit('increment-me'); //emit은 이벤트를 발생 시키는 것 이다.
+                },
+            },
+        };
+        const subComponent = {
+            template : '<div><button @click = "decrementCounterFromComponent">컴포넌트에서  counter 변수값 감소</button></div>',
+            methods : {
+                decrementCounterFromComponent() {
+                    this.$emit('decrement-me'); //emit은 이벤트를 발생 시키는 것 이다.
+                },
+            },
+        };
+        
+        let webstore = new Vue({
+            el: "#app",
+            components:{'my-component' : MyComponent},
+            //components:{'my-component' : subComponent}, 중복 안됨
+            data() {
+                return {
+                    counter: 0,
+                }
+            },
+            methods: {
+                incrementCounter() {
+                    this.counter++;
+                },
+                decrementCounter() {
+                    this.counter--;
+                }
+
+            }
+        });
+    </script>
+</body>
+
+</html>

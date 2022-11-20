@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>sanghee_final_project</title>
+    <style>
+body{
+  margin : 0px 200px 0px 200px;
+
+}
+
+#realhead{
+ 
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  
+  
+}
+#logo {
+  width: 20%;
+  height: 20%;
+  
+}
+#TVchart{
+  width:40%;
+  height:100%;
+  float:left;
+  margin:10;
+  padding:10;
+}
+.container{
+  float:right;
+}
+      nav ul{
+    width: 100%;
+    background-color: azure;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li{
+    display : inline-block
+}
+
+.home{
+    background-color: grey;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+}
+.home a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 16px 16px;
+}
+.mypage{
+    background-color: grey;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    float: right;
+}
+.mypage a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 16px 16px;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-menu{
+    color:black;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.dropdown-content{
+    position: absolute;
+    background-color: antiquewhite;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px whitesmoke;
+}
+.dropdown-content a{
+    color : black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content{
+    display:none;
+}
+.dropdown-menu:hover:not(.home){
+    background-color: lavender;
+    color:white;
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+.dropdown-content a:hover{background-color:aliceblue;}
+
+/*<!--.tradingview-widget-container{margin:0px 30px 0px 100px;}-->*/
+
+    </style>
+  </head>
+  <body>
+
+<header>
+    <div id="realhead">
+      <img id = "logo" src = "Mainlogo.png">
+    
+    </div>
+    <hr>
+    <div>
+      <nav>
+        <ul>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">INTRODUCE</div>
+            <div class = "dropdown-content">
+              <a href = "#">Menu1-1</a>
+              <a href = "#">Menu1-2</a>
+              <a href = "#">Menu1-3</a>
+              <a href = "#">Menu1-4</a>
+            </div>
+          </li>
+
+          
+          <li class = "dropdown">
+            <div class = "dropdown-menu">PRODUCT</div>
+            <div class = "dropdown-content">
+              <a href = "#">상품소개</a>
+              <a href = "#">추세분석</a>
+              <a href = "#">매매기법</a>
+              <a href = "#">멘탈관리</a>
+              <a href = "#">백테스팅</a>
+              <a href = "#">보조지표활용</a>
+              <a href = "#">거시경제지표활용</a>
+            </div>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">INFORMATION</div>
+            <div class = "dropdown-content">
+              <a href = "#">해외선물개요</a>
+              <a href = "#">거래시간</a>
+              <a href = "#">장 운영 캘린더</a>
+              <a href = "#">경제지표 캘린더</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">NEWS&TREND</div>
+            <div class = "dropdown-content">
+              <a href = "#">뉴스&시황</a>
+              <a href = "#">추세추종</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">REALTIMEDATA</div>
+            <div class = "dropdown-content">
+              <a href = "#">Menu3-1</a>
+              <a href = "#">Menu3-2</a>
+              <a href = "#">Menu3-3</a>
+              <a href = "#">Menu3-4</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">COMMUNITY</div>
+            <div class = "dropdown-content">
+              <a href = "#">Menu4-1</a>
+              <a href = "#">Menu4-2</a>
+              <a href = "#">Menu4-3</a>
+              <a href = "#">Menu4-4</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">PREMIUM</div>
+            <div class = "dropdown-content">
+              <a href = "#">프리미엄서비스</a>
+              <a href = "#">프리미엄분석</a>
+              <a href = "#">(BETA)온체인데이터</a>
+              
+          </li>
+          <li class = "home"><a href="#">Home</a></li>
+          <li class = "mypage"><a href="#">MyPage</a></li>
+         
+        </ul>
+      </nav>
+    </div>
+    <div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"> <a href="https://kr.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
+    },
+    {
+      "description": "코스피",
+      "proName": "KRX:KOSPI"
+    },
+    {
+      "description": "중국종합",
+      "proName": "FOREXCOM:CHN50"
+    },
+    {
+      "description": "비트코인",
+      "proName": "BINANCE:BTCUSDT"
+    },
+    {
+      "description": "환율",
+      "proName": "FX_IDC:USDKRW"
+    }
+  ],
+  "showSymbolLogo": false,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "kr"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<div id = "TVchart">
+
+
+</div>
+
+    </div>
+  </header>
+  <div class="container">
+    <div class="column_right">
+      <div class="area_login" >
+        <div class="login" style="display:block;">
+          <form>
+              <fieldset>
+                                <div class="login_set">
+                                    <input type="checkbox" id="save" name="save" ><label for="save"  title="24시간 하루간 유지됩니다.">아이디저장</label>
+                                    <input type="checkbox" id="auto" name="auto"><label for="auto" title="24시간 하루간 유지됩니다.">자동로그인</label>
+                                </div>
+                                <div class="login_inp">
+                                    <input type="text"     placeholder="아이디"   class ="int login_m_id" value="" autocomplete="new-password" >
+                                    <input type="password" placeholder="비밀번호" class ="inp login_m_pwd" autocomplete="new-password"  >
+                                    
+                                    <button class="login_btn">로그인</button>
+                                </div>
+                                <div class="list_user">
+                                    <span class="signup"><a href="/member/register"><i class="far fa-user"></i> 회원가입</a></span>
+                                    <span class="userlost"><a href="/member/searchid">아이디/비밀번호 찾기</a></span>
+                                </div>
+              </fieldset>
+          </form>
+        </div>
+                        </div>
+        <div class="area_notice">
+          <h2 class="box_header"><a href="#">공지사항<span><i><img src="/../assets/img/arrow_right.png"></i></span></a></h2>
+          <ul class="notice_list">
+            <li><a href="/board/views/15/85832">이용안내</a></li>
+            <li><a href="/board/views/15/85544">거래소&선물옵션 이용 GUIDE</a></li>
+            <li><a href="/board/views/15/81213">PREMIUM MEMBERSHIP 이용안내</a></li>
+            <li><a href="/board/views/15/81092"></a></li>
+            <li><a href="/board/views/15/79746"></a></li>
+            <li><a href="/board/views/15/79745"></a></li>
+            </ul>
+        </div>
+      
+      
+
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

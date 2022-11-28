@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="board.css" type="text/css">
+</head>
+<body>
+	<div class="board_layout">
+        <div class="board_header">
+            <div class="header_top">
+                <ul class="sort_wrap">
+                    <li><a style="cursor:pointer;" class="tab_orderby on" data-orderby="date">#최신순</a></li>
+                    <li><a style="cursor:pointer;" class="tab_orderby"    data-orderby="like">#인기순</a></li>
+                    <li><a style="cursor:pointer;" class="tab_orderby"    data-orderby="hit">#조회순</a></li>
+                    <li><a style="cursor:pointer;" class="tab_orderby"    data-orderby="comment">#댓글순</a></li>
+                </ul>
+                <div class="btn_wrap btn_write" >
+			                        <a href="javascript:alert('로그인을 해주세요.');"><img src="/../assets/img/write_btn.png" style="cursor:pointer;"></a>
+                                    </div>
+            </div>
+            
+            <div class="header_btm">
+                <ul>
+                                        
+                                	<li><a style="cursor:pointer;" class="tab_board " data-board_id="10">선물자유</a></li>
+                                	<li><a style="cursor:pointer;" class="tab_board on" data-board_id="21">뉴스 & 시황</a></li>
+                                	<li><a style="cursor:pointer;" class="tab_board " data-board_id="35">수익인증</a></li>
+                            </ul>
+            </div>
+        </div>
+        
+                <div class="board_main">
+        	<div class="notice_wrap gallery_notice"  style="display:none;">
+				
+	        </div>
+			<div class="divi_wrap" style="display:none;">
+				<ul>
+					<li><a class="tab_gubun on" data-gubun="0" style="cursor:pointer;">전체</a></li>
+					<li><a class="tab_gubun " data-gubun="1" style="cursor:pointer;">일반</a></li>
+					<li><a class="tab_gubun " data-gubun="2" style="cursor:pointer;">음식</a></li>
+					<li><a class="tab_gubun " data-gubun="3" style="cursor:pointer;">인물</a></li>
+					<li><a class="tab_gubun " data-gubun="4" style="cursor:pointer;">아이&amp;가족</a></li>
+					<li><a class="tab_gubun " data-gubun="5" style="cursor:pointer;">동물</a></li>
+					<li><a class="tab_gubun " data-gubun="6" style="cursor:pointer;">여행</a></li>
+					<li><a class="tab_gubun " data-gubun="7" style="cursor:pointer;">모델</a></li>
+				</ul>
+			</div>
+			<ul class="article_wrap" style="display:none;"></ul> 
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="board_list" style="display:none;">
+                <thead>
+                    <tr>
+                        <td class="num">NO</td>
+                        <td class="board">게시판</td>
+                        <td class="sub">제목</td>
+                        <td class="nick">닉네임</td>
+                        <td class="date">등록일</td>
+                        <td class="hit">조회</td>
+                        <td class="good">추천</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="board_footer">
+            <div class="foot_btn_wrap">
+                <ul class="paging"></ul>
+                <div class="btn_wrap btn_write">
+			                        <a href="javascript:alert('로그인을 해주세요.');"><img src="/../assets/img/write_btn.png" style="cursor:pointer;"></a>
+                                    </div>
+            </div>
+            <div class="search_wrap">
+                <form name="fsearch" id="lbo_sch" method="get" action="" autocomplete="off">
+                    <fieldset>
+                        <legend>자유게시판 내용 검색</legend>
+                        <select name="sch_field" class="sch_field">
+                            <option value="subject" >제목</option>
+                            <option value="content" >내용</option>
+                            <option value="subject_content" >제목+내용</option>
+                            <option value="name"  >글쓴이</option>
+                        </select>
+                        <label for="sch_stx">검색어</label>
+                        <input type="text" name="sch_text" value="" id="sch_text" required="" class="inp" maxlength="30" placeholder="검색어입력">
+                        <input type="button" value="검색" id="sch_submit" style="cursor:pointer;">
+                    </fieldset>
+                </form>
+                <input type="hidden" id="board_bid"  value="21">
+                <input type="hidden" id="now_page" value="1">
+                <input type="hidden" id="group_seq" value="8">
+            </div>
+        </div>
+        <div class="area_left_ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- 메인-중앙배너 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-3968050503364595"
+                 data-ad-slot="5254657927"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- -->        </div>
+    </div>
+</div>
+<div style="clear:both"></div>
+	
+</body>
+</html>

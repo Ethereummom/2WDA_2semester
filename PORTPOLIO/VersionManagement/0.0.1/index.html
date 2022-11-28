@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>sanghee_final_project</title>
+    <link rel="stylesheet" href="ver1.css" type="text/css">
+    <style>
+
+
+/*<!--.tradingview-widget-container{margin:0px 30px 0px 100px;}-->*/
+
+  </style>
+  </head>
+  <body>
+
+<div class = 'header'>
+    <div id="realhead">
+      <img id = "logo" src = "Mainlogo.png">
+    
+    </div>
+    <hr>
+    <div id ="fixedheader">
+    <div id = "menubar">
+      <nav>
+        <ul>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">INTRODUCE</div>
+            <div class = "dropdown-content">
+              <a href = "#">이용안내</a>
+              <a href = "#">저자소개</a>
+              <a href = "#">프리미엄서비스</a>
+            </div>
+          </li>
+
+          
+          <li class = "dropdown">
+            <div class = "dropdown-menu">PRODUCT</div>
+            <div class = "dropdown-content">
+              <a href = "#">상품소개</a>
+              <a href = "#">추세분석</a>
+              <a href = "#">매매기법</a>
+              <a href = "#">멘탈관리</a>
+              <a href = "#">백테스팅</a>
+              <a href = "#">보조지표활용</a>
+              <a href = "#">거시경제지표활용</a>
+            </div>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">INFORMATION</div>
+            <div class = "dropdown-content">
+              <a href = "#">해외선물개요</a>
+              <a href = "#">거래시간</a>
+              <a href = "#">장 운영 캘린더</a>
+              <a href = "#">경제지표 캘린더</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">NEWS&TREND</div>
+            <div class = "dropdown-content">
+              <a href = "#">뉴스&시황</a>
+              <a href = "#">추세추종</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">REALTIMEDATA</div>
+            <div class = "dropdown-content">
+              <a href = "#">Menu3-1</a>
+              <a href = "#">Menu3-2</a>
+              <a href = "#">Menu3-3</a>
+              <a href = "#">Menu3-4</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">COMMUNITY</div>
+            <div class = "dropdown-content">
+              <a href = "#">Menu4-1</a>
+              <a href = "#">Menu4-2</a>
+              <a href = "#">Menu4-3</a>
+              <a href = "#">Menu4-4</a>
+          </li>
+          <li class = "dropdown">
+            <div class = "dropdown-menu">PREMIUM</div>
+            <div class = "dropdown-content">
+              <a href = "#">프리미엄서비스</a>
+              <a href = "#">프리미엄분석</a>
+              <a href = "#">(BETA)온체인데이터</a>
+              
+          </li>
+          <li class = "home"><a href="#">Home</a></li>
+          <li class = "mypage"><a href="#">MyPage</a></li>
+         
+        </ul>
+      </nav>
+    </div>
+    <div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"> <a href="https://kr.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
+    },
+    {
+      "description": "코스피",
+      "proName": "KRX:KOSPI"
+    },
+    {
+      "description": "중국종합",
+      "proName": "FOREXCOM:CHN50"
+    },
+    {
+      "description": "비트코인",
+      "proName": "BINANCE:BTCUSDT"
+    },
+    {
+      "description": "환율",
+      "proName": "FX_IDC:USDKRW"
+    }
+  ],
+  "showSymbolLogo": false,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "kr"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="column_left">
+      <link rel="stylesheet" href="board.css">
+      <div class="board_layout">
+        <div class="board_header">
+            <div class="header_top">
+                <ul class="sort_wrap">
+                    <li><a style="cursor:pointer;" class="tab_orderby on" data-orderby="date">#최신순</a></li>
+                    <li><a style="cursor:pointer;" class="tab_orderby"    data-orderby="like">#인기순</a></li>
+                    <li><a style="cursor:pointer;" class="tab_orderby"    data-orderby="hit">#조회순</a></li>
+                    <li><a style="cursor:pointer;" class="tab_orderby"    data-orderby="comment">#댓글순</a></li>
+                </ul>
+                <div class="btn_wrap btn_write" >
+			                        <a href="javascript:alert('로그인을 해주세요.');"><img src="write_btn.png" style="cursor:pointer;"></a>
+                                    </div>
+            </div>
+            
+            <div class="header_btm">
+                <ul>                     
+                    <li><a style="cursor:pointer;" class="tab_board " data-board_id="10">자유게시판</a></li>
+                    <li><a style="cursor:pointer;" class="tab_board on" data-board_id="21">뉴스</a></li>
+                    <li><a style="cursor:pointer;" class="tab_board " data-board_id="35">추세추종</a></li>
+                </ul>
+            </div>
+        </div>
+        
+                <div class="board_main">
+        	<div class="notice_wrap gallery_notice"  style="display:none;">
+				
+	        </div>
+			<div class="divi_wrap" style="display:none;">
+				<ul>
+					<li><a class="tab_gubun on" data-gubun="0" style="cursor:pointer;">전체</a></li>
+					<li><a class="tab_gubun " data-gubun="1" style="cursor:pointer;">일반</a></li>
+					<li><a class="tab_gubun " data-gubun="2" style="cursor:pointer;">음식</a></li>
+					<li><a class="tab_gubun " data-gubun="3" style="cursor:pointer;">인물</a></li>
+					<li><a class="tab_gubun " data-gubun="4" style="cursor:pointer;">아이&amp;가족</a></li>
+					<li><a class="tab_gubun " data-gubun="5" style="cursor:pointer;">동물</a></li>
+					<li><a class="tab_gubun " data-gubun="6" style="cursor:pointer;">여행</a></li>
+					<li><a class="tab_gubun " data-gubun="7" style="cursor:pointer;">모델</a></li>
+				</ul>
+			</div>
+			<ul class="article_wrap" style="display:none;"></ul> 
+			<table width= 650px; cellspacing="0" cellpadding="0" class="board_list" style="display:none;">
+                <thead>
+                    <tr>
+                        <td class="num">NO</td>
+                        <td class="board">게시판</td>
+                        <td class="sub">제목</td>
+                        <td class="nick">닉네임</td>
+                        <td class="date">등록일</td>
+                        <td class="hit">조회</td>
+                        <td class="good">추천</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="board_footer">
+            <div class="foot_btn_wrap">
+                <ul class="paging"></ul>
+                <div class="btn_wrap btn_write">
+			                        <a href="javascript:alert('로그인을 해주세요.');"><img src="" style="cursor:pointer;"></a>
+                                    </div>
+            </div>
+            <div class="search_wrap">
+                <form name="fsearch" id="lbo_sch" method="get" action="" autocomplete="off">
+                    <fieldset>
+                        <legend>자유게시판 내용 검색</legend>
+                        <select name="sch_field" class="sch_field">
+                            <option value="subject" >제목</option>
+                            <option value="content" >내용</option>
+                            <option value="subject_content" >제목+내용</option>
+                            <option value="name"  >글쓴이</option>
+                        </select>
+                        <label for="sch_stx">검색어</label>
+                        <input type="text" name="sch_text" value="" id="sch_text" required="" class="inp" maxlength="30" placeholder="검색어입력">
+                        <input type="button" value="검색" id="sch_submit" style="cursor:pointer;">
+                    </fieldset>
+                </form>
+                <input type="hidden" id="board_bid"  value="21">
+                <input type="hidden" id="now_page" value="1">
+                <input type="hidden" id="group_seq" value="8">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="column_right">
+      <div class="area_login" >
+        <div class="login" style="display:block;">
+          <form>
+              <fieldset>
+                
+                                <div class="login_set">
+                                    <input type="checkbox" id="save" name="save" ><label for="save"  title="24시간 하루간 유지됩니다.">아이디저장</label>
+                                    <input type="checkbox" id="auto" name="auto"><label for="auto" title="24시간 하루간 유지됩니다.">자동로그인</label>
+                                </div>
+                                <div class="login_inp">
+                                    <input type="text"     placeholder="아이디"   class ="int login_m_id" value="" autocomplete="new-password" >
+                                    <input type="password" placeholder="비밀번호" class ="inp login_m_pwd" autocomplete="new-password"  >
+                                    
+                                    <button class="login_btn">로그인</button>
+                                </div>
+                                <div class="list_user">
+                                    <span class="signup"><a href="/member/register"><i class="far fa-user"></i> 회원가입</a></span>
+                                    <span class="userlost"><a href="/member/searchid">아이디/비밀번호 찾기</a></span>
+                                </div>
+                              
+              </fieldset>
+          </form>
+        </div>
+                        </div>
+        <div class="area_notice">
+          <h2 class="box_header"><a href="#">공지사항<span><img id = "notice" src="notice.png"></span></a></h2>
+          <ul class="notice_list">
+            <li><a href="/board/views/15/85832">이용안내</a></li>
+            <li><a href="/board/views/15/85544">거래소&선물옵션 이용 GUIDE</a></li>
+            <li><a href="/board/views/15/81213">PREMIUM MEMBERSHIP 이용안내</a></li>
+            <li><a href="/board/views/15/81092"></a></li>
+            <li><a href="/board/views/15/79746"></a></li>
+            <li><a href="/board/views/15/79745"></a></li>
+            </ul>
+        </div>
+        </div>
+      </div>
+      
+      <!--푸터입니당-->
+      <div class="footer"  style="display:;">
+        <div class="area_link">
+            <div class="link_wrap">
+                <ul>
+                    
+                    <li><a href="/board/lists/44">업무제휴문의</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">이용안내</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="http://m.gosutop.com">모바일버전보기(BETA)</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="area_info">
+본 사이트에 표시된 데이터는 항상 실시간 업데이트되거나 정확한 것은 아니라는 것을 알려드립니다. <br>
+모든 CFD(주가, 지수, 선물) 및 암호화폐는 외환 가격 거래소가 아니라 시장 형성자(market maker)가 제공하므로 가격은 정확하지 않거나 실제 시장과 다를 수 있습니다. <br>
+또한 GrowYourInsight가 제공하는 CFD(주가,지수,선물) 및 암호화폐 프로그램 가격은 지시적이며 거래를 목적으로 사용하기에는 적합하지 않다는 것을 의미합니다.<br />
+따라서 당사는 이 결과로 발생한 손실에 대해서는 책임지지 않습니다.<br />
+<br />
+
+
+문의: ethereummom@gmail.com 전화: 010-xxxx-xxxx <br />
+Copyrightⓒ 이더맘, All Right Reserved.
+
+</div>
+</div>
+      
+      
+
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

@@ -2,6 +2,7 @@ import java.util.Comparator;
 
 class Node<E>{
     E data;
+   
     Node<E> next;
     public Node(E data, Node<E> next){
         this.data = data;
@@ -26,12 +27,16 @@ class LinkedList<E>{
     
     }
     public void dump(){
-        current =head;
-
+        current = head;
+        Student datavalue = (Student)current.data
+        
         while(current!=null){
             System.out.println("현재 객체: "+current);
             System.out.println("다음 객체: "+current.next);
-            System.out.println("현재 데이터: "+current.data);
+            System.out.println("현재 데이터: "+current.data.toString(Student(hakbun,name,mobile)));
+         
+           
+
             current=current.next;
 
         }
@@ -44,7 +49,6 @@ class LinkedList<E>{
                 return current.data;
             }
             current = current.next;
-
         }
         return null;
 
@@ -75,6 +79,22 @@ class LinkedList<E>{
     
     }
 }
+class Student{
+
+    int hakbun;
+    String name;
+    String mobile;
+
+
+
+    public Student(int hakbun, String name, String mobile){
+        this.hakbun=hakbun;
+        this.name=name;
+        this.mobile=mobile;
+
+        
+    }
+}
 class StringCompareator implements Comparator<String>{
     public int compare(String o1, String o2){
         int result = o1.compareTo(o2);
@@ -84,23 +104,27 @@ class StringCompareator implements Comparator<String>{
 
 public class Wdb2{
     public static void main(String []args) {
-        LinkedList<String>jjc= new LinkedList();
+        LinkedList<Student>jjc= new LinkedList();
 
-        jjc.addFirst("a");
-        jjc.addFirst("b");
-        jjc.addFirst("c");
-        jjc.addLast("messi");
+        Student sanghee = new Student(2101134, "심상희", "01029637243");
+        Student jongchan = new Student(2101198, "전종찬","01034234212");
+        Student hwangju =new Student(1820103, "조황주", "01029234212");
+
+        jjc.addFirst((sanghee));
+        jjc.addFirst((jongchan));
+        jjc.addFirst((hwangju));
+       
 
         jjc.dump();
         StringCompareator compare = new StringCompareator();
         //String result =  jjc.search("b", compare);
-        String result =  jjc.search("messi", new Comparator<String>() {public int compare(String o1, String o2){
+        //String result =  jjc.search("messi", new Comparator<String>() {public int compare(String o1, String o2){
             //익명(무명)클래스는 유지보수의 관점에서 한번만 쓰고 버리는게 이득일 경우에 클래스를 한번 쓸 용도로 메인메서드 안에 정의하여 쓰고 버린다.
-            int result = o1.compareTo(o2);
-            return result;
-        }
-        });
-        System.out.println("검색 결과: " +result);
+           // int result = o1.compareTo(o2);
+            //return result;
+       // }
+        //});
+        //System.out.println("검색 결과: " +result);
        
 
         //jjc.dump();

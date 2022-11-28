@@ -4,7 +4,6 @@ body{
   
   #realhead{
     width : 100%;
-    height : 95px;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -13,8 +12,8 @@ body{
   }
   /*이미지크기조정*/
   #logo {
-    width: 110px;
-    height: 90px;
+    width: 10%;
+    height: 10%;
     
   }
   #notice{
@@ -24,7 +23,7 @@ body{
  
   .header{
     width : 100%;
-    height : 260px;
+    height : 280px;
     
     
   }
@@ -40,6 +39,9 @@ body{
     width : 1200px;
     height : 3000px;
     margin-left: auto; margin-right: auto;
+
+
+    
   }
   /*로그인탭임*/
 .login_set input[type=checkbox] {

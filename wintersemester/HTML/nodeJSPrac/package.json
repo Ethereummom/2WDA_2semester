@@ -1,0 +1,22 @@
+{
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "name": "nodejsprac",
+  "version": "1.0.0",
+  "description": "sanghee winter semester",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "sanghee sim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

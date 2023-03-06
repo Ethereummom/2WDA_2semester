@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<script>
+    const root = document.getElementById("root");
+    const h3 =React.createElement( //HTML요소만들기
+        "h3", //1번째 argument =  태그 이름
+        {
+            onMouseEnter:() => console.log("mouse enter")
+        }, //2번째 argument = property , property에 따른 style도 적용 가능함.
+        "Hello I'm a span"
+        );
+    const btn = React.createElement("button", 
+    {
+        onClick: () => console.log("it's clicked"),
+    }, 
+    "Click me"
+    );
+    const container =React.createElement("div",null,[h3,btn]);
+    ReactDOM.render(container ,root);
+    
+    //React의 핵심** - ReactJS에서는 모든 것이 JavaScript로 시작함. 그 이후에 html태그들을 구현함.
+    //매번 eventlistener을 만드는게아니고 property에 event를 등록함으로써 더간단함!
+    //다음 시간에는 더 간단히 event들을 구현하는 방법을 배움.
+</script>
+</html>

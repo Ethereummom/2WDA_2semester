@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "root"></div>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type = "text/babel">
+
+        const root = document.getElementById("root");
+        function App(){
+            //가변데이터를 react에서 interact하게 표현하는방식 useState
+            const [counter,modifier] = React.useState(0); //배열이하나생김[undefined, function << 데이터를바꿀때사용하는함수]
+            const onClick = () => {
+               modifier(counter+1);
+               //modifier옵션은 그값으로 업데이트하고 항상 리렌더링을 일으켜줌.직접 리렌더링을 할 필요가 업슴.
+                console.log(counter)
+                //ReactDOM.render(<App /> , root); 이 형식으로 표현하면 이벤트가일어날때마다 RERENDERING을하기때문에불편하다.
+            }
+            return(
+                <div>
+                    <h3>total clicks:{counter} </h3>
+                    <button onClick={onClick}>Click me</button>
+                </div>
+            );
+        }
+        
+        ReactDOM.render(<App /> , root);
+
+    
+    </script>
+    
+</body>
+</html>

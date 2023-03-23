@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+        title I LOVE BONGOLE 
+        style.
+            #title{color: red}; 
+
+        h1#title= message
+        h2 summary 
+        ul 
+            each item in array 
+                li= item 
+        h3 #{menu.id}
+        img(src=menu.img) 
+             

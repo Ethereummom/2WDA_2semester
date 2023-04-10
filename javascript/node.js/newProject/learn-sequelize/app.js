@@ -1,9 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const nunjucks = require('nunjucks');
+const nunjucks = require('nunjucks'); 
 
 const {sequelize} = require("./models");
+
+const indexRouter = require("./routes");
+const usersRouter = require("./routes/users");
+const commentsRouter = require("./routes/comments");
+
 
 const app = express();
 
@@ -32,6 +37,9 @@ app.use(express.urlencoded({extended:false}));
 
 //my routers 내 라우터들 코드가 곧 들어옴
 
+app.use('/',indexRouter);
+app.use('/users',usersRouter);
+app.use('/comments',commentsRouter);
 
 
 //404처리

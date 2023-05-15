@@ -22,13 +22,30 @@ const request = async (req, api) => {
     throw error;
   }
 };
+const requestpost = async (req, api, data) => {
+  try {
+    if (!req.session.jwt) { // 세션에 토큰이 없으면
+      const tokenResult = await axios.post(`${URL}/token`, {
+        clientSecret: process.env.CLIENT_SECRET,
+      });
+      req.session.jwt = tokenResult.data.token; // 세션에 토큰 저장
+    }
+    return await axios.post(`${URL}${api}`, data, {
+      headers: { authorization: req.session.jwt },
+    }); // API 요청
+  } catch (error) {
+    if (error.response?.status === 419) { // 토큰 만료시 토큰 재발급 받기
+      delete req.session.jwt;
+      return request(req, api, data);
+    } // 419 외의 다른 에러면
+    throw error;
+  }
+};
 
 exports.getMyPosts = async (req, res, next) => {
   try {
     const result = await request(req, '/posts/my');
-    const title = "내 포스팅 내역"
-    res.render('myposts',{title,mypost:result.data.payload})
-    //res.json(result.data);
+    res.render('myposts',{mypost:result.data.payload});
   } catch (error) {
     console.error(error);
     next(error);
@@ -37,12 +54,9 @@ exports.getMyPosts = async (req, res, next) => {
 
 exports.searchByHashtag = async (req, res, next) => {
   try {
-    const result = await request(
-      req, `/posts/hashtag/${encodeURIComponent(req.params.hashtag)}`,
-    );
-    const title = `Search: ${req.params.hashtag}`
-    res.render('myposts',{title,mypost:result.data.payload})
-    //res.json(result.data);
+    const result = await request(req, `/posts/hashtag/${encodeURIComponent(req.params.hashtag)}`);
+    res.render('searchbyhashtag',{hashtagdata:result.data.payload});
+   
   } catch (error) {
     if (error.code) {
       console.error(error);
@@ -50,6 +64,44 @@ exports.searchByHashtag = async (req, res, next) => {
     }
   }
 };
-exports.renderMain = (req,res) => {
-  res.render('main', {key: process.env.CLIENT_SECRET});
+
+exports.renderMain = async(req, res, next) => { 
+  try {
+    const result = await request(req, '/posts/all');
+    res.render('mainpost', {allPosts:result.data.payload});
+    console.log(result.data)
+  } catch (error) {
+    console.error(error);
+    next(error);  
+  }
+  
 };
+
+exports.modifyForm = async(req,res,next) => {
+  try{
+    const result = await request(req,`/posts/modifyform/${encodeURIComponent(req.params.id)}`);
+    res.render('modifyForm',{post:result.data.payload});
+  }catch(error){
+    console.error(error);
+    next(error);
+  }
+}
+exports.modifyPost = async(req,res,next) => {
+  try{
+    const result = await requestpost(req,`/posts/modify/${encodeURIComponent(req.params.id)}`, {content:req.body.modifycontent});
+    return res.redirect('/myposts')
+  }catch(error){
+    console.error(error);
+    next(error)
+  }
+}
+
+exports.deletePost = async(req,res,next) =>{
+  try{
+    const result = await request(req,`/posts/delete/${encodeURIComponent(req.params.id)}`);
+    return res.redirect('/myposts')
+  }catch(error){
+    console.error(error);
+    next(error)
+  }
+}

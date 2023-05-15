@@ -1,5 +1,9 @@
 const jwt = require('jsonwebtoken');
 const { Domain, User, Post, Hashtag } = require('../models');
+const { sequelize } = require('../models');
+const { QueryTypes } = require('sequelize');
+
+
 
 exports.createToken = async (req, res) => {
   const { clientSecret } = req.body;
@@ -38,6 +42,7 @@ exports.createToken = async (req, res) => {
   }
 };
 
+
 exports.tokenTest = (req, res) => {
   res.json(res.locals.decoded);
 };
@@ -60,16 +65,39 @@ exports.getMyPosts = (req, res) => {
     });
 };
 
+exports.getAllPosts = (req, res) => {
+  const query = `
+    SELECT posts.*, users.nick
+    FROM posts
+    JOIN users ON posts.UserId = users.id
+  `;
+  sequelize.query(query, { type: QueryTypes.SELECT })
+    .then(posts => {
+      console.log(posts);
+      res.json({
+        code: 200,
+        payload: posts,
+      });
+    })
+    .catch(error => {
+      console.error(error);
+      return res.status(500).json({
+        code: 500,
+        message: '서버 에러',
+      });
+    });
+};
+
 exports.getPostsByHashtag = async (req, res) => {
   try {
-    const hashtag = await Hashtag.findOne({ where: { title: req.params.title } });
-    if (!hashtag) {
+    const query = await Hashtag.findOne({ where: { title: req.params.hashtag } });
+    if (!query) {
       return res.status(404).json({
         code: 404,
         message: '검색 결과가 없습니다',
       });
     }
-    const posts = await hashtag.getPosts();
+    const posts = await query.getPosts();
     return res.json({
       code: 200,
       payload: posts,
@@ -82,3 +110,72 @@ exports.getPostsByHashtag = async (req, res) => {
     });
   }
 };
+
+exports.deletePostById = async (req, res) => {
+  try {
+    const post = await Post.findOne({ where: { id: req.params.pid } });
+    if (!post) {
+      return res.status(404).json({
+        code: 404,
+        message: '삭제할 게시물을 찾을 수 없습니다',
+      });
+    }
+
+    await post.destroy();
+    return res.redirect('http://localhost:4000/myposts');
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      code: 500,
+      message: '서버 에러',
+    });
+  }
+};
+exports.modifyFormById = async (req, res) => {
+  try {
+    const post = await Post.findOne({ where: { id: req.params.pid } });
+    if (!post) {
+      return res.status(404).json({
+        code: 404,
+        message: '수정할 게시물을 찾을 수 없습니다',
+      });
+    }
+    // 게시물 정보 응답
+    res.json({
+      code: 200,
+      payload: post,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      code: 500,
+      message: '서버 에러',
+    });
+  }
+};
+
+exports.modifyPostById = async (req, res) => {
+  console.log(req.params.pid)
+  try {
+
+    const post = await Post.findOne({ where: { id: req.params.pid } });
+    if (!post) {
+      return res.status(404).json({
+        code: 404,
+        message: '수정할 게시물을 찾을 수 없습니다',
+      }); 
+    }
+    // 게시물 수정
+    post.content = req.body.content;
+    await post.save();
+
+    return res.redirect('http://localhost:4000/myposts');
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      code: 500,
+      message: '서버 에러',
+    });
+  }
+};
+

@@ -17,6 +17,6 @@ router.get('/test', verifyToken, tokenTest);
 router.get('/posts/my', verifyToken, getMyPosts);
 
 // GET /v1/posts/hashtag/:title
-router.get('/posts/hashtag/:title', verifyToken, getPostsByHashtag);
+router.get('/posts/hashtag/hashtag', verifyToken, getPostsByHashtag);
 
 module.exports = router;

@@ -3,11 +3,9 @@ const { User, Post, Hashtag } = require('../models');
 exports.renderProfile = (req, res) => {
   res.render('profile', { title: '내 정보 - NodeBird' });
 };
-
 exports.renderJoin = (req, res) => {
   res.render('join', { title: '회원가입 - NodeBird' });
 };
-
 exports.renderMain = async (req, res, next) => {
   try {
     const posts = await Post.findAll({
@@ -26,7 +24,6 @@ exports.renderMain = async (req, res, next) => {
     next(err);
   }
 }
-
 exports.renderHashtag = async (req, res, next) => {
   const query = req.query.hashtag;
   if (!query) {

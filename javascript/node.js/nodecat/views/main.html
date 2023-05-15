@@ -8,7 +8,7 @@
         <script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
             axios.post('http://localhost:8002/v2/token', {
-                clientSecrte:'{{key}}',
+                clientSecret:'{{key}}',
             })
             .then((res) => {
                 document.querySelector('#result').textContent = JSON.stringify(res.data);

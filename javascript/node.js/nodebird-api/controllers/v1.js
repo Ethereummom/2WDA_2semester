@@ -21,7 +21,7 @@ exports.createToken = async (req, res) => {
       id: domain.User.id,
       nick: domain.User.nick,
     }, process.env.JWT_SECRET, {
-      expiresIn: '1m', // 1분
+      expiresIn: '10m', // 10분
       issuer: 'nodebird',
     });
     return res.json({
@@ -62,7 +62,7 @@ exports.getMyPosts = (req, res) => {
 
 exports.getPostsByHashtag = async (req, res) => {
   try {
-    const hashtag = await Hashtag.findOne({ where: { title: req.params.title } });
+    const hashtag = await Hashtag.findOne({ where: { hashtag: req.params.hashtag } });
     if (!hashtag) {
       return res.status(404).json({
         code: 404,

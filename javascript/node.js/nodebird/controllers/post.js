@@ -4,7 +4,6 @@ exports.afterUploadImage = (req, res) => {
   console.log(req.file);
   res.json({ url: `/img/${req.file.filename}` });
 };
-
 exports.uploadPost = async (req, res, next) => {
   try {
     const post = await Post.create({
@@ -12,6 +11,7 @@ exports.uploadPost = async (req, res, next) => {
       img: req.body.url,
       UserId: req.user.id,
     });
+
     const hashtags = req.body.content.match(/#[^\s#]*/g);
     if (hashtags) {
       const result = await Promise.all(

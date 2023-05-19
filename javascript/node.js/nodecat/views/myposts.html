@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.list-unstyled li {
+            list-style: none;
+          }
+    </style>
+</head>
+<body>
+    <H1>내 포스트</H1>
+    <ul class="list-unstyled">
+        {%for mypost in mypost%}
+    <li>글제목: {{mypost.title}}</li>
+    <li>글내용: {{mypost.content}}</li>
+    <li>글이미지: {{mypost.img}}</li>
+    <li>글생성날짜: {{mypost.cretedAt}}</li>
+    <li class="nav-item">
+        <a class="nav-link" href="/modifyform/{{ mypost.id }}">수정하기</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/delete/{{ mypost.id }}">삭제하기</a>
+    </li>
+    <hr>
+
+</ul>{%endfor%}
+
+    
+</body>
+</html>
+
+

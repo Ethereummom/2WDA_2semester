@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        table,tr,th,td{
+            border : 2px solid gray;
+            text-align : center;
+            border-collapse: separate;
+        }
+
+    </Style>
+</head>
+<body>
+    <h1>HyperText Markup Language</h1>
+    <h2>Extensible Markup Language includes HTML</h2>
+    <hr>
+    
+    <p>웹 서버에 데이터를 요청하고 데이터를 가져오는 역할
+        현재 인터넷은 HTTP프로토콜 기반임.
+        HTTP통신은 클라이언트의 웹 브라우저가 요청 시에만 연결되고, 서버는 응답 이후 연결이 끊김.
+        (중요!) 이후 다시 클라이언트가 요청 시에 다시 연결 됨.</p>
+    <hr>
+    <table>
+        <tr><th>프랑스</th><td>파리</td><td>Paris</td></tr>
+        <tr><th>영국</th><td>런던</td><td>London</td></tr>
+        <tr><th>벨기에</th><td>브뤼셀</td><td>Brussel</td></tr>
+
+    </table>
+    <hr>
+    <h5>Symentic Tag 적용-HTML5</h5>
+    <table>
+        <thead><tr><th>프랑스</th><th>영국</th><th>이탈리아</th></tr></thead>
+        <tbody>
+            <tr><td>파리</td><td>런던</td><td>로마</td></tr>
+            <tr><td>Paris</td><td>London</td><td>Rome</td></tr>
+        
+        </tbody>
+
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+            <th rowspan ="2">종목명</th>
+            <th colspan ="2">매출액</th>
+            <th rowspan ="2">증감률</th></tr>
+            <tr>
+            <th>1분기</th>
+            <th>2분기</th>
+            </tr>
+        </thead>
+            <Tr>
+                <td>apple INC</td>
+                <td>1.2bil$ </td>
+                <td>1.7bil$</td>
+                <td>35%</td>
+            </Tr>
+
+
+    </table>
+    <hr>
+
+    <form method = "post">
+        <input type = "text" name = "id" value = "아이디">
+        <input type = "password" name = "pw" value = "패스워드">
+        <input type = "number">
+        <input type = "button" value = "로그인">
+        <input type = "radio" name = "mode" value = "Normal">일반모드
+        <input type = "radio" name = "mode" value = "Dark">다크모드
+        <input type = "checkbox" name = "season" value ="spring">봄
+        <input type = "checkbox" name = "season" value ="summer">여름
+        <input type = "checkbox" name = "season" value ="fall">가을
+        <input type = "checkbox" name = "season" value ="winter">겨울
+    </form>
+
+
+    
+</body>
+</html>

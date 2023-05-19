@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h2 id = "heading">Register</h2>
+    <hr>
+    <form name = "registerForm" onsubmit = "return verify()">
+        <input type = "text" name = "name" id = "name">
+        <input type = "password" name = "password" id = "password">
+        <input type = submit value = "확인">
+        
+    </form>
+    <button id = "button">더하기</button>
+    <div id = "parent">
+
+    </div>
+
+    <script>
+        $(()=>{
+            $("#button").on('click', ()=>{
+                $.ajax({
+                    url:"https://jsonplaceholder.typicode.com/posts/1"
+                }).done((data,textStatus,jqXHR) => {
+                    console.log(data);
+                    const title = $("<p></p>");
+                    title.text(data.title)
+                    $("#parent").append(title);
+                }).fail((jqXHR,textStatus,errorThrown)=> {
+                    alerT("통신 실패")
+                    
+                });
+            });
+
+        });
+
+    </script>
+    
+</body>
+</html>

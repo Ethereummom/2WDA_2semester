@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>
+        total clicks :0
+        
+    </span>
+    <button id = "btn">click me</button>
+
+    
+    <script>
+        let counter =0;
+        const button = document.getElementById("btn");
+        const span =  document.querySelector("span");
+        function handleClick(){
+            counter =counter+1;
+            span.innerText =`Total clicks: ${counter}`;
+                    }
+        button.addEventListener("click", handleClick)
+        //vanila javascript로 반응형 버튼 하나 만드는데만 4개의 프로세스가 필요했음.
+        //1. html 만들기
+        //2. javascript에서 가져옴
+        //3. 이벤트 감지
+        //4. data 업데이트
+        //5. html 업데이트
+        //react로 작업하면 뭐가 편할까
+    </script>
+    
+</body>
+</html>

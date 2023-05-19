@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <h2 id = "heading">Register</h2>
+    <hr>
+    <form name = "registerForm" onsubmit = "return verify()">
+        <input type = "text" name = "name" id = "name">
+        <input type = "password" name = "password" id = "password">
+        <input type = submit value = "확인">
+    </form>
+    <button id = "button">더하기</button>
+    <div id = "parent">
+        <h1 id = "num">0</h1>
+        
+        
+    </div>
+         
+
+
+    <script>
+        //html파일이 처음부터 끝까지 완전히 다 로딩되었을때 이 함수를 실행한다는 뜻임
+       $(() => {
+        alert("Document loaded");
+        //$("#name")
+        //== document.getElementbyId("name")
+        $("#name").val("이름")
+        console.log($("#heading").text())
+        $("#heading").text("회원가입")
+        //이벤트 처리는 대부분 콜백임.
+        $("#heading").on('click', ()=>{
+            alert("강신성유튜뷰알고리즘")
+        })
+       });
+       $(()=>{
+        $("#button").on('click', () =>{
+            
+            var count = $("#num").text();
+            count++;
+            console.log(count)
+            $("#num").text(parseInt(count));
+        })
+
+
+       }) 
+    </script>
+    
+</body>
+</html>
